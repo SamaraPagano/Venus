@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $_SESSION["user_id"] = $user_id;
             $_SESSION["user_nome"] = $user_nome;
-            header("Location: index.php");
+            header("Location: livros.php");
             exit(); 
         } 
         else 

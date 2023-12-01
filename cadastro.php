@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     //Executar a consulta
     if($stmt->execute())
     {
-        header("Location: index.php");
+        header("Location: livros.php");
     }
     else
     {

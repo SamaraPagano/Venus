@@ -64,7 +64,7 @@ else
             <ul>
                 <li><a href="reviews.php">Reviews</a></li>
                 <li><a href="avaliacao.php">Avaliações</a></li>
-                <li><a href="livros.php">Livros</a></li>
+                <li><a href="perfil.php">Perfil</a></li>
                 <li><a href="logout.php">Sair</a></li>
             </ul>
         </nav>
@@ -100,6 +100,7 @@ else
 
             <!-- Resultados da Pesquisa -->
             <?php
+            // Se a pesquisa retornar resultados
             if ($result->num_rows > 0) 
             {
                 while ($livro = $result->fetch_assoc()) 
@@ -108,15 +109,17 @@ else
                     echo "<h3>" . $livro['nome'] . "</h3>";
                     echo "<p>Autor: " . $livro['autor'] . "</p>";
                     echo "<p>Ano de Publicação: " . $livro['ano_publicacao'] . "</p>";
-
+            
                     // Adicionar a imagem da capa
                     $capa_path = "caminho/para/as/capas/" . $livro['id'] . ".jpg";
                     echo "<img src='$capa_path' alt='Capa do Livro'>";
-
-                    echo "<a href='#'>Mais Detalhes</a>";
+                    echo "<br><br>";
+                    echo "<a href='avaliacao.php?livro=" . $livro['id'] . "'>Avaliar</a>";
+                    echo "<br><br>";
+                    echo "<a href='detalhes_livro.php?id=" . $livro['id'] . "'>Mais Detalhes</a>";
                     echo "</div>";
                 }
-            } 
+            }
             else 
             {
                 echo "<p>Nenhum livro encontrado.</p>";

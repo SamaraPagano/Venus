@@ -14,7 +14,7 @@ require_once('conexao.php');
 
 //inicializar as variáveis
 $livro_id = isset($_GET['livro']) ? $_GET['livro'] : null;
-$avaliacao = isset($_GET['avaliacao']) ? $_POST['avaliacao'] : null;
+$avaliacao = isset($_POST['avaliacao']) ? $_POST['avaliacao'] : null;
 $review = isset($_POST['review']) ? $_POST['review'] : null;
 
 //Verificar se o formulário foi enviado
@@ -80,22 +80,26 @@ $result_avaliacoes = $stmt_avaliacoes->get_result();
         </div>
         <nav>
             <ul>
-                <li><a href="livros.php">Livros</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li><a href="perfil.php">Perfil</a></li>
+                <li><a href="reviews.php">Reviews</a></li>
                 <li><a href="logout.php">Sair</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+
         <section id="avaliacao">
             <h2>Avaliação de "<?php echo $nome_livro; ?>"</h2>
 
             <?php
             // Exibir mensagens de sucesso ou erro
-            if (isset($mensagemSucesso)) {
+            if (isset($mensagemSucesso)) 
+            {
                 echo "<p class='sucesso'>$mensagemSucesso</p>";
-            } elseif (isset($mensagemErro)) {
+            } elseif (isset($mensagemErro)) 
+            {
+
                 echo "<p class='erro'>$mensagemErro</p>";
             }
             ?>
@@ -106,7 +110,8 @@ $result_avaliacoes = $stmt_avaliacoes->get_result();
             <div id="estrelas">
                 <?php
                 // Exibir estrelas vazias
-                for ($i = 1; $i <= 5; $i++) {
+                for ($i = 1; $i <= 5; $i++) 
+                {
                     echo "<img id='estrela$i' src='estrela_vazia.png' alt='Estrela' onclick='preencherEstrelas($i)'>";
                 }
                 ?>
@@ -122,18 +127,46 @@ $result_avaliacoes = $stmt_avaliacoes->get_result();
             <!-- Avaliações Existentes -->
             <h3>Avaliações dos Usuários:</h3>
             <?php
-            while ($avaliacao = $result_avaliacoes->fetch_assoc()) 
+            while ($avaliacao_usuario = $result_avaliacoes->fetch_assoc())  
             {
                 echo "<div class='avaliacao-usuario'>";
-                echo "<p><strong>Usuário:</strong> " . $avaliacao['nome_usuario'] . "</p>";
-                echo "<p><strong>Avaliação:</strong> " . $avaliacao['avaliacao'] . "</p>";
-                echo "<p><strong>Review:</strong> " . $avaliacao['review'] . "</p>";
+                echo "<p><strong>Usuário:</strong> " . $avaliacao_usuario['nome_usuario'] . "</p>";
+                echo "<p><strong>Avaliação:</strong> " . $avaliacao_usuario['avaliacao'] . "</p>";
+                echo "<p><strong>Review:</strong> " . $avaliacao_usuario['review'] . "</p>";                
                 echo "</div>";
             }
             ?>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        function preencherEstrelas(n) {
+            
+            //Preencher as estrelas até a classificação fornecida
+            for (let i = 1; i <= 5; i++) 
+            {
+                const estrela = document.getElementById(`estrela${i}`);
+                if (i <= n) 
+                {
+                    estrela.src = 'estrela_cheia.png';
+                } 
+                else 
+                {
+                    estrela.src = 'estrela_vazia.png';
+                }
+            }
+        }
+
+        function enviarAvaliacao() 
+        {
+            // Obter a avaliação selecionada pelo usuário
+            const avaliacao = document.querySelector('input[name="avaliacao"]:checked').value;
+
+            // Exibir mensagem de sucesso
+            alert(`Avaliação enviada com sucesso: ${avaliacao} estrelas!`);
+        }
+
+
+    </script>
 </body>
 </html>

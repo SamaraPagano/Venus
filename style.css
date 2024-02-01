@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background: #E3AADD;
+}
+
+header {
+    background-color: #E3AADD;
+    color: #2B134B;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-titulo {
+    flex-grow: 1;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+.header-titulo h1 {
+    margin: 0; /* Remove a margem padrão do h1 */
+}
+
+
+nav {
+    margin-left: auto;
+    display: flex;
+}
+
+nav a {
+    color: #2F2841;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #EE82EE;
+}
+
+nav a i {
+    margin-right: 5px;
+}
+
+.main-section {
+    text-align: center;
+    padding: 40px;
+}
+
+.featured-books-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.book {
+    width: 200px;
+    margin: 15px;
+    background: #FFFFFF;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.book h3 {
+    color: #2F2841;
+    margin: 10px 0;
+}
+
+.book p {
+    color: #514869;
+}
+
+.categories-section {
+    margin-top: 50px;
+}
+
+.categories-section h2 {
+    text-align: center;
+}
+
+.categories-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.categories-section ul li {
+    margin: 10px;
+}
+
+.categories-section ul li a {
+    text-decoration: none;
+    background-color: #EE82EE;
+    color: #2F2841;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.categories-section ul li a:hover {
+    background-color: #DDA0DD;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ul li {
+    margin: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    background-color: #EE82EE;
+    color: #2F2841;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #DDA0DD;
+}
+
+.cta-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    background-color: #EE82EE;
+    color: #2F2841;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #DDA0DD;
+}
+
+.featured-books {
+    background: #F8F8F8;
+    padding: 40px;
+    text-align: center;
+}
+
+.featured-books h2 {
+    color: #2F2841;
+}
+
+.featured-books-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.book-description {
+    font-size: 14px;
+    color: #757575;
+    margin-top: 5px;
+}
+
+.main {
+    width: 100vw;
+    height: 100vw;
+    background: #E3AADD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1 {
+    font-size: 3vw;
+    color: #2F2841;
+}
+
+.img-book {
+    width: 35vw;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #2F2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-login > h1 {
+    color: #EE82EE;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #F0FFFFDE;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color: #DDA0DD;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder {
+    color: #2B134B;
+}
+
+.textfield label {
+    display: flex;
+    align-items: center;
+}
+
+.textfield label i {
+    margin-right: 10px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2B134B;
+    background: #EE82EE;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #DDA0DD;
+}
+
+@media only screen and (max-width: 950px) {
+    .card-login,
+    .card-cadastro {
+        width: 85%;
+    }
+}
+
+.left-cadastro {
+    width: 50vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-cadastro > h1 {
+    font-size: 3vw;
+    color: #2F2841;
+}
+
+.right-cadastro {
+    width: 50vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cadastro {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #2F2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-cadastro > h1 {
+    color: #EE82EE;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.btn-cadastro {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2B134B;
+    background: #EE82EE;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #DDA0DD;
+}
